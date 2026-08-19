@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عدة | أدوات عربية مجانية</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#0b1020;
+color:#fff;
+min-height:100vh;
+}
+
+header{
+padding:25px 20px;
+text-align:center;
+border-bottom:1px solid #202840;
+}
+
+.logo{
+font-size:34px;
+font-weight:800;
+}
+
+.logo span{color:#6c63ff}
+
+header p{
+margin-top:8px;
+color:#aab2c8;
+}
+
+.container{
+width:min(1100px,92%);
+margin:35px auto;
+}
+
+.tools{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:18px;
+}
+
+.card{
+background:#12192b;
+border:1px solid #222c45;
+border-radius:18px;
+padding:22px;
+cursor:pointer;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:#6c63ff;
+}
+
+.icon{
+font-size:35px;
+margin-bottom:12px;
+}
+
+.card h2{
+font-size:19px;
+margin-bottom:8px;
+}
+
+.card p{
+color:#9ca7bd;
+font-size:14px;
+line-height:1.6;
+}
+
+.tool{
+display:none;
+background:#12192b;
+border:1px solid #222c45;
+border-radius:18px;
+padding:25px;
+margin-top:25px;
+}
+
+.tool.active{display:block}
+
+.tool h2{
+margin-bottom:18px;
+}
+
+input,textarea{
+width:100%;
+background:#0b1020;
+border:1px solid #303b58;
+color:#fff;
+padding:13px;
+border-radius:10px;
+margin:8px 0;
+font-size:16px;
+}
+
+button{
+background:#6c63ff;
+color:white;
+border:0;
+padding:12px 18px;
+border-radius:10px;
+cursor:pointer;
+font-size:15px;
+margin-top:8px;
+}
+
+button:hover{background:#584ff0}
+
+.result{
+margin-top:15px;
+padding:15px;
+background:#0b1020;
+border-radius:10px;
+color:#dfe4f2;
+min-height:45px;
+}
+
+.back{
+background:#252e46;
+margin-bottom:15px;
+}
+
+footer{
+text-align:center;
+padding:35px 15px;
+color:#707b94;
+font-size:13px;
+}
+
+@media(max-width:600px){
+.logo{font-size:28px}
+.container{margin-top:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">عدة<span>.</span></div>
+<p>أدوات عربية مجانية وسريعة</p>
+</header>
+
+<div class="container">
+
+<div id="home">
+<div class="tools">
+
+<div class="card" onclick="openTool('percent')">
+<div class="icon">🔢</div>
+<h2>حاسبة النسبة</h2>
+<p>احسب النسبة المئوية بسهولة.</p>
+</div>
+
+<div class="card" onclick="openTool('age')">
+<div class="icon">🎂</div>
+<h2>حاسبة العمر</h2>
+<p>اعرف عمرك بالسنوات والأشهر والأيام.</p>
+</div>
+
+<div class="card" onclick="openTool('password')">
+<div class="icon">🔐</div>
+<h2>مولد كلمات المرور</h2>
+<p>أنشئ كلمة مرور قوية وعشوائية.</p>
+</div>
+
+<div class="card" onclick="openTool('words')">
+<div class="icon">📝</div>
+<h2>عداد الكلمات</h2>
+<p>احسب عدد الكلمات والحروف في النص.</p>
+</div>
+
+<div class="card" onclick="openTool('qr')">
+<div class="icon">📱</div>
+<h2>مولد QR</h2>
+<p>حوّل أي رابط إلى رمز QR.</p>
+</div>
+
+<div class="card" onclick="openTool('code')">
+<div class="icon">💻</div>
+<h2>أداة للمبرمجين</h2>
+<p>تنسيق سريع للنصوص البرمجية.</p>
+</div>
+
+</div>
+</div>
+
+<!-- النسبة -->
+
+<div id="percent" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>🔢 حاسبة النسبة</h2>
+
+<input id="num1" type="number" placeholder="النسبة">
+<input id="num2" type="number" placeholder="من">
+
+<button onclick="calcPercent()">احسب</button>
+
+<div id="percentResult" class="result"></div>
+</div>
+
+<!-- العمر -->
+
+<div id="age" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>🎂 حاسبة العمر</h2>
+
+<input id="birth" type="date">
+
+<button onclick="calcAge()">احسب عمري</button>
+
+<div id="ageResult" class="result"></div>
+</div>
+
+<!-- كلمة المرور -->
+
+<div id="password" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>🔐 مولد كلمات المرور</h2>
+
+<input id="passLength" type="number" value="16" min="6" max="50">
+
+<button onclick="generatePassword()">توليد كلمة مرور</button>
+
+<div id="passResult" class="result"></div>
+</div>
+
+<!-- الكلمات -->
+
+<div id="words" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>📝 عداد الكلمات والحروف</h2>
+
+<textarea id="text" rows="8" placeholder="اكتب النص هنا..." oninput="countText()"></textarea>
+
+<div id="wordResult" class="result">
+الكلمات: 0 | الحروف: 0
+</div>
+</div>
+
+<!-- QR -->
+
+<div id="qr" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>📱 مولد QR</h2>
+
+<input id="qrText" placeholder="ضع الرابط هنا">
+
+<button onclick="generateQR()">إنشاء QR</button>
+
+<div id="qrResult" class="result"></div>
+</div>
+
+<!-- أدوات المبرمج -->
+
+<div id="code" class="tool">
+<button class="back" onclick="goHome()">← رجوع</button>
+<h2>💻 أدوات المبرمجين</h2>
+
+<textarea id="codeText" rows="8" placeholder="اكتب النص أو الكود هنا..."></textarea>
+
+<button onclick="upperCode()">تحويل إلى أحرف كبيرة</button>
+
+<div id="codeResult" class="result"></div>
+</div>
+
+</div>
+
+<footer>
+© 2026 عدة — أدوات عربية مجانية
+</footer>
+
+<script>
+
+function openTool(id){
+document.getElementById("home").style.display="none";
+
+document.querySelectorAll(".tool").forEach(x=>{
+x.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function goHome(){
+document.querySelectorAll(".tool").forEach(x=>{
+x.classList.remove("active");
+});
+
+document.getElementById("home").style.display="block";
+
+window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function calcPercent(){
+
+let a=parseFloat(document.getElementById("num1").value);
+let b=parseFloat(document.getElementById("num2").value);
+
+if(!a || !b){
+document.getElementById("percentResult").innerText="أدخل الأرقام أولاً";
+return;
+}
+
+let result=(a/b)*100;
+
+document.getElementById("percentResult").innerText=
+"النتيجة: "+result.toFixed(2)+"%";
+}
+
+function calcAge(){
+
+let birth=document.getElementById("birth").value;
+
+if(!birth){
+document.getElementById("ageResult").innerText="اختر تاريخ الميلاد";
+return;
+}
+
+let b=new Date(birth);
+let today=new Date();
+
+let age=today.getFullYear()-b.getFullYear();
+
+let month=today.getMonth()-b.getMonth();
+
+if(month<0 || (month===0 && today.getDate()<b.getDate())){
+age--;
+}
+
+document.getElementById("ageResult").innerText=
+"عمرك تقريباً: "+age+" سنة";
+}
+
+function generatePassword(){
+
+let length=parseInt(document.getElementById("passLength").value)||16;
+
+let chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+let password="";
+
+for(let i=0;i<length;i++){
+password+=chars.charAt(
+Math.floor(Math.random()*chars.length)
+);
+}
+
+document.getElementById("passResult").innerText=password;
+}
+
+function countText(){
+
+let text=document.getElementById("text").value;
+
+let chars=text.length;
+
+let words=text.trim()===""?0:text.trim().split(/\s+/).length;
+
+document.getElementById("wordResult").innerText=
+"الكلمات: "+words+" | الحروف: "+chars;
+}
+
+function generateQR(){
+
+let text=document.getElementById("qrText").value.trim();
+
+if(!text){
+document.getElementById("qrResult").innerText="ضع الرابط أولاً";
+return;
+}
+
+let url=
+"https://api.qrserver.com/v1/create-qr-code/?size=220x220&data="
++encodeURIComponent(text);
+
+document.getElementById("qrResult").innerHTML=
+'<img src="'+url+'" alt="QR Code" style="max-width:220px;border-radius:10px">';
+}
+
+function upperCode(){
+
+let text=document.getElementById("codeText").value;
+
+document.getElementById("codeResult").innerText=
+text.toUpperCase();
+}
+
+</script>
+
+</body>
+</html>

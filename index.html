@@ -2,11 +2,13 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>عدة | أدواتك اليومية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>عدة | أدوات عربية مجانية</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
 margin:0;
 font-family:Arial,Tahoma,sans-serif;
@@ -14,107 +16,160 @@ background:#f6f7fb;
 color:#151827;
 transition:.3s
 }
-body.dark{background:#0b1020;color:#fff}
+
+body.dark{
+background:#0b1020;
+color:#fff
+}
+
 header{
-padding:22px 6%;
+padding:20px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 background:#fff;
-border-bottom:1px solid #e8e9ef;
+border-bottom:1px solid #e6e8ef;
 position:sticky;
 top:0;
-z-index:10
+z-index:20
 }
-.dark header{background:#11172a;border-color:#222b43}
-.logo{font-size:27px;font-weight:900}
-.logo span{color:#675cff}
+
+.dark header{
+background:#11172a;
+border-color:#252f49
+}
+
+.logo{
+font-size:28px;
+font-weight:900
+}
+
+.logo span{
+color:#675cff
+}
+
 header button{
 margin:0;
 padding:9px 13px;
 background:#eef0f7;
 color:#151827
 }
-.dark header button{background:#222b43;color:#fff}
+
+.dark header button{
+background:#222b43;
+color:#fff
+}
+
 .hero{
 text-align:center;
-padding:65px 20px 35px
+padding:55px 20px 35px
 }
+
 .hero h1{
 font-size:42px;
 margin:0 0 12px
 }
-.hero h1 span{color:#675cff}
+
+.hero h1 span{
+color:#675cff
+}
+
 .hero p{
 color:#70768a;
 font-size:17px
 }
-.dark .hero p{color:#aab2c7}
+
+.dark .hero p{
+color:#aab2c7
+}
+
 .container{
 width:min(1100px,92%);
 margin:auto
 }
+
 .search{
 width:100%;
-padding:16px 18px;
+padding:16px;
 border:1px solid #dddfea;
 border-radius:14px;
 font-size:16px;
-outline:none;
 background:#fff;
-margin-bottom:25px
+margin-bottom:20px
 }
+
 .dark .search{
 background:#11172a;
-border-color:#2a3551;
+border-color:#303b58;
 color:#fff
 }
+
 .categories{
 display:flex;
 gap:8px;
 overflow:auto;
-padding-bottom:18px
+margin-bottom:20px
 }
+
 .categories button{
 white-space:nowrap;
 background:#eceef6;
 color:#333;
 margin:0
 }
-.categories button.active,
-.categories button:hover{
+
+.categories button.active{
 background:#675cff;
 color:#fff
 }
+
 .dark .categories button{
 background:#20283d;
 color:#fff
 }
+
 .tools{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:17px
 }
+
 .card{
 background:#fff;
-padding:23px;
+padding:22px;
 border-radius:18px;
 border:1px solid #e6e8ef;
 cursor:pointer;
 transition:.2s
 }
+
 .dark .card{
 background:#11172a;
 border-color:#252f49
 }
+
 .card:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 30px #00000012
+transform:translateY(-4px)
 }
-.icon{font-size:34px}
-.card h3{margin:14px 0 7px}
-.card p{margin:0;color:#777d90;line-height:1.6}
-.dark .card p{color:#aab2c7}
+
+.icon{
+font-size:34px
+}
+
+.card h3{
+margin:13px 0 7px
+}
+
+.card p{
+margin:0;
+color:#777d90;
+line-height:1.6
+}
+
+.dark .card p{
+color:#aab2c7
+}
+
 .tool{
 display:none;
 margin:25px 0;
@@ -123,12 +178,19 @@ background:#fff;
 border:1px solid #e5e7ef;
 border-radius:18px
 }
+
 .dark .tool{
 background:#11172a;
 border-color:#252f49
 }
-.tool.active{display:block}
-input,textarea,select{
+
+.tool.active{
+display:block
+}
+
+input,
+textarea,
+select{
 width:100%;
 padding:13px;
 margin:8px 0;
@@ -137,11 +199,15 @@ border-radius:10px;
 font-size:16px;
 font-family:inherit
 }
-.dark input,.dark textarea,.dark select{
+
+.dark input,
+.dark textarea,
+.dark select{
 background:#0b1020;
 border-color:#303b58;
 color:#fff
 }
+
 button{
 border:0;
 border-radius:10px;
@@ -151,50 +217,64 @@ color:#fff;
 font-size:15px;
 cursor:pointer
 }
-button:hover{opacity:.9}
+
+button:hover{
+opacity:.9
+}
+
 .back{
 background:#eceef5;
 color:#222;
 margin-bottom:18px
 }
+
 .dark .back{
 background:#242d45;
 color:#fff
 }
+
 .result{
 margin-top:15px;
 padding:16px;
 border-radius:12px;
 background:#f3f4f8;
-min-height:25px;
+min-height:30px;
 word-break:break-word
 }
-.dark .result{background:#0b1020}
+
+.dark .result{
+background:#0b1020
+}
+
 .copy{
-margin-top:10px;
-background:#252d43
+background:#252d43;
+margin-top:10px
 }
-.qr img{
-display:block;
-max-width:230px;
-margin:15px auto;
-background:#fff;
-padding:10px
+
+.hidden{
+display:none!important
 }
-.hidden{display:none!important}
-footer{
-text-align:center;
-padding:50px 20px;
-color:#858b9d
-}
+
 .empty{
 text-align:center;
 padding:30px;
 color:#777
 }
+
+footer{
+text-align:center;
+padding:50px 20px;
+color:#858b9d
+}
+
 @media(max-width:600px){
-.hero h1{font-size:32px}
-header{padding:17px 5%}
+.hero h1{
+font-size:32px
+}
+
+header{
+padding:17px 5%
+}
 }
 </style>
 </head>
@@ -202,13 +282,26 @@ header{padding:17px 5%}
 <body>
 
 <header>
-<div class="logo">عدة<span>.</span></div>
+
+<div class="logo">
+عدة<span>.</span>
+</div>
+
 <button onclick="toggleTheme()">🌙</button>
+
 </header>
 
 <section class="hero">
-<h1>أدواتك اليومية، <span>في مكان واحد</span></h1>
-<p>أدوات عربية مجانية وسريعة بدون تعقيد.</p>
+
+<h1>
+أدواتك اليومية،
+<span>في مكان واحد</span>
+</h1>
+
+<p>
+أدوات عربية مجانية وسريعة بدون تعقيد.
+</p>
+
 </section>
 
 <main class="container">
@@ -220,10 +313,23 @@ placeholder="🔎 ابحث عن أداة..."
 oninput="searchTools()">
 
 <div class="categories">
-<button class="active" onclick="filterTools('all',this)">الكل</button>
-<button onclick="filterTools('daily',this)">يومية</button>
-<button onclick="filterTools('writing',this)">كتابة</button>
-<button onclick="filterTools('dev',this)">برمجة</button>
+
+<button class="active" onclick="filterTools('all',this)">
+الكل
+</button>
+
+<button onclick="filterTools('daily',this)">
+يومية
+</button>
+
+<button onclick="filterTools('writing',this)">
+كتابة
+</button>
+
+<button onclick="filterTools('dev',this)">
+برمجة
+</button>
+
 </div>
 
 <div id="tools" class="tools">
@@ -237,13 +343,13 @@ oninput="searchTools()">
 <div class="card" data-category="daily" data-name="حاسبة العمر" onclick="openTool('age')">
 <div class="icon">🎂</div>
 <h3>حاسبة العمر</h3>
-<p>اعرف عمرك بالسنوات والأشهر والأيام.</p>
+<p>اعرف عمرك بسهولة.</p>
 </div>
 
 <div class="card" data-category="daily" data-name="مولد كلمات المرور" onclick="openTool('password')">
 <div class="icon">🔐</div>
 <h3>مولد كلمات المرور</h3>
-<p>أنشئ كلمة مرور قوية وعشوائية.</p>
+<p>أنشئ كلمة مرور قوية.</p>
 </div>
 
 <div class="card" data-category="writing" data-name="عداد الكلمات" onclick="openTool('words')">
@@ -255,68 +361,339 @@ oninput="searchTools()">
 <div class="card" data-category="daily" data-name="مولد qr" onclick="openTool('qr')">
 <div class="icon">📱</div>
 <h3>مولد QR</h3>
-<p>حوّل أي رابط إلى رمز QR.</p>
+<p>حوّل أي رابط إلى QR.</p>
 </div>
 
 <div class="card" data-category="dev" data-name="أدوات المبرمجين" onclick="openTool('dev')">
 <div class="icon">💻</div>
 <h3>أدوات المبرمجين</h3>
-<p>تنسيق وترميز النصوص بسرعة.</p>
+<p>URL Encode و Decode.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="حاسبة الخصم" onclick="openTool('discount')">
+<div class="icon">🏷️</div>
+<h3>حاسبة الخصم</h3>
+<p>اعرف السعر بعد الخصم.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="حاسبة الضريبة" onclick="openTool('vat')">
+<div class="icon">💰</div>
+<h3>حاسبة الضريبة</h3>
+<p>احسب الضريبة والسعر النهائي.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="محول الوحدات" onclick="openTool('units')">
+<div class="icon">📏</div>
+<h3>محول الوحدات</h3>
+<p>حوّل بين الأطوال والأوزان.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="مؤقت" onclick="openTool('timer')">
+<div class="icon">⏱️</div>
+<h3>مؤقت</h3>
+<p>مؤقت بسيط وسريع.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="رقم عشوائي" onclick="openTool('random')">
+<div class="icon">🎲</div>
+<h3>رقم عشوائي</h3>
+<p>ولّد رقمًا عشوائيًا.</p>
+</div>
+
+<div class="card" data-category="writing" data-name="تحويل النص" onclick="openTool('texttools')">
+<div class="icon">🔤</div>
+<h3>أدوات النص</h3>
+<p>Uppercase و Lowercase وتنظيف النص.</p>
+</div>
+
+<div class="card" data-category="daily" data-name="حاسبة المتوسط" onclick="openTool('average')">
+<div class="icon">📊</div>
+<h3>حاسبة المتوسط</h3>
+<p>احسب متوسط مجموعة أرقام.</p>
 </div>
 
 </div>
 
-<div id="empty" class="empty hidden">لا توجد أداة بهذا الاسم.</div>
+<div id="empty" class="empty hidden">
+لا توجد أداة بهذا الاسم.
+</div>
+
+
+<!-- النسبة -->
 
 <div id="percent" class="tool">
+
 <button class="back" onclick="goHome()">← رجوع</button>
+
 <h2>🔢 حاسبة النسبة</h2>
-<input id="p1" type="number" placeholder="كم؟">
-<input id="p2" type="number" placeholder="من؟">
+
+<input id="p1" type="number" placeholder="القيمة">
+
+<input id="p2" type="number" placeholder="من">
+
 <button onclick="percent()">احسب</button>
+
 <div id="pr" class="result"></div>
+
 </div>
+
+
+<!-- العمر -->
 
 <div id="age" class="tool">
+
 <button class="back" onclick="goHome()">← رجوع</button>
+
 <h2>🎂 حاسبة العمر</h2>
+
 <input id="birth" type="date">
+
 <button onclick="age()">احسب عمري</button>
+
 <div id="ar" class="result"></div>
+
 </div>
+
+
+<!-- كلمة المرور -->
 
 <div id="password" class="tool">
+
 <button class="back" onclick="goHome()">← رجوع</button>
+
 <h2>🔐 مولد كلمات المرور</h2>
+
 <input id="length" type="number" value="16" min="6" max="64">
+
 <button onclick="password()">توليد</button>
+
 <div id="pass" class="result"></div>
-<button class="copy" onclick="copyText('pass')">📋 نسخ</button>
+
+<button class="copy" onclick="copyText('pass')">
+📋 نسخ
+</button>
+
 </div>
+
+
+<!-- عداد الكلمات -->
 
 <div id="words" class="tool">
+
 <button class="back" onclick="goHome()">← رجوع</button>
+
 <h2>📝 عداد الكلمات والحروف</h2>
-<textarea id="text" rows="9" placeholder="اكتب أو الصق النص هنا..." oninput="count()"></textarea>
-<div id="wr" class="result">الكلمات: 0 | الحروف: 0 | الأسطر: 0</div>
+
+<textarea
+id="text"
+rows="9"
+placeholder="اكتب أو الصق النص هنا..."
+oninput="count()"></textarea>
+
+<div id="wr" class="result">
+الكلمات: 0 | الحروف: 0 | الأسطر: 0
 </div>
 
-<div id="qr" class="tool qr">
-<button class="back" onclick="goHome()">← رجوع</button>
-<h2>📱 مولد QR</h2>
-<input id="qrtext" placeholder="ضع الرابط أو النص هنا">
-<button onclick="qr()">إنشاء QR</button>
-<div id="qrresult" class="result"></div>
 </div>
+
+
+<!-- QR -->
+
+<div id="qr" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>📱 مولد QR</h2>
+
+<input
+id="qrtext"
+placeholder="ضع الرابط أو النص هنا">
+
+<button onclick="qr()">إنشاء QR</button>
+
+<div id="qrresult" class="result"></div>
+
+</div>
+
+
+<!-- البرمجة -->
 
 <div id="dev" class="tool">
+
 <button class="back" onclick="goHome()">← رجوع</button>
+
 <h2>💻 أدوات المبرمجين</h2>
-<textarea id="devtext" rows="9" placeholder="اكتب النص هنا..."></textarea>
+
+<textarea
+id="devtext"
+rows="9"
+placeholder="اكتب النص هنا"></textarea>
+
 <button onclick="encode()">URL Encode</button>
+
 <button onclick="decode()">URL Decode</button>
+
 <div id="devresult" class="result"></div>
-<button class="copy" onclick="copyText('devresult')">📋 نسخ النتيجة</button>
+
+<button class="copy" onclick="copyText('devresult')">
+📋 نسخ
+</button>
+
+</div>
+
+
+<!-- الخصم -->
+
+<div id="discount" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>🏷️ حاسبة الخصم</h2>
+
+<input id="price" type="number" placeholder="السعر">
+
+<input id="discountValue" type="number" placeholder="نسبة الخصم %">
+
+<button onclick="discount()">احسب</button>
+
+<div id="discountResult" class="result"></div>
+
+</div>
+
+
+<!-- الضريبة -->
+
+<div id="vat" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>💰 حاسبة الضريبة</h2>
+
+<input id="vatPrice" type="number" placeholder="السعر قبل الضريبة">
+
+<input id="vatRate" type="number" value="15" placeholder="نسبة الضريبة %">
+
+<button onclick="vat()">احسب</button>
+
+<div id="vatResult" class="result"></div>
+
+</div>
+
+
+<!-- الوحدات -->
+
+<div id="units" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>📏 محول الوحدات</h2>
+
+<input id="unitValue" type="number" placeholder="القيمة">
+
+<select id="unitType">
+
+<option value="km-m">كيلومتر → متر</option>
+
+<option value="m-km">متر → كيلومتر</option>
+
+<option value="kg-g">كيلوجرام → جرام</option>
+
+<option value="g-kg">جرام → كيلوجرام</option>
+
+<option value="m-cm">متر → سنتيمتر</option>
+
+<option value="cm-m">سنتيمتر → متر</option>
+
+</select>
+
+<button onclick="convertUnit()">تحويل</button>
+
+<div id="unitResult" class="result"></div>
+
+</div>
+
+
+<!-- المؤقت -->
+
+<div id="timer" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>⏱️ مؤقت</h2>
+
+<input id="seconds" type="number" value="60" placeholder="عدد الثواني">
+
+<button onclick="startTimer()">ابدأ</button>
+
+<button onclick="stopTimer()">إيقاف</button>
+
+<div id="timerResult" class="result">
+60 ثانية
+</div>
+
+</div>
+
+
+<!-- رقم عشوائي -->
+
+<div id="random" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>🎲 مولد رقم عشوائي</h2>
+
+<input id="min" type="number" value="1" placeholder="من">
+
+<input id="max" type="number" value="100" placeholder="إلى">
+
+<button onclick="randomNumber()">توليد</button>
+
+<div id="randomResult" class="result"></div>
+
+</div>
+
+
+<!-- النص -->
+
+<div id="texttools" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>🔤 أدوات النص</h2>
+
+<textarea id="textToolInput" rows="8" placeholder="اكتب النص هنا"></textarea>
+
+<button onclick="upper()">UPPERCASE</button>
+
+<button onclick="lower()">lowercase</button>
+
+<button onclick="cleanSpaces()">تنظيف المسافات</button>
+
+<div id="textToolResult" class="result"></div>
+
+<button class="copy" onclick="copyText('textToolResult')">
+📋 نسخ
+</button>
+
+</div>
+
+
+<!-- المتوسط -->
+
+<div id="average" class="tool">
+
+<button class="back" onclick="goHome()">← رجوع</button>
+
+<h2>📊 حاسبة المتوسط</h2>
+
+<input
+id="averageInput"
+placeholder="مثال: 10,20,30,40">
+
+<button onclick="average()">احسب المتوسط</button>
+
+<div id="averageResult" class="result"></div>
+
 </div>
 
 </main>
@@ -325,128 +702,555 @@ oninput="searchTools()">
 عدة © 2026 — أدوات عربية مجانية
 </footer>
 
+
 <script>
 
 function openTool(id){
-document.querySelectorAll(".tool").forEach(x=>x.classList.remove("active"));
-document.getElementById("tools").classList.add("hidden");
-document.getElementById("search").classList.add("hidden");
-document.querySelector(".categories").classList.add("hidden");
-document.getElementById(id).classList.add("active");
-scrollTo({top:0,behavior:"smooth"});
+
+document.querySelectorAll(".tool")
+.forEach(x=>x.classList.remove("active"));
+
+document.getElementById("tools")
+.classList.add("hidden");
+
+document.getElementById("search")
+.classList.add("hidden");
+
+document.querySelector(".categories")
+.classList.add("hidden");
+
+document.getElementById(id)
+.classList.add("active");
+
+scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
+
 
 function goHome(){
-document.querySelectorAll(".tool").forEach(x=>x.classList.remove("active"));
-document.getElementById("tools").classList.remove("hidden");
-document.getElementById("search").classList.remove("hidden");
-document.querySelector(".categories").classList.remove("hidden");
-scrollTo({top:0,behavior:"smooth"});
+
+document.querySelectorAll(".tool")
+.forEach(x=>x.classList.remove("active"));
+
+document.getElementById("tools")
+.classList.remove("hidden");
+
+document.getElementById("search")
+.classList.remove("hidden");
+
+document.querySelector(".categories")
+.classList.remove("hidden");
+
+scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
+
 
 function percent(){
+
 let a=Number(p1.value);
 let b=Number(p2.value);
-if(!a||!b){
+
+if(!a || !b){
+
 pr.textContent="أدخل الأرقام أولاً";
+
 return;
+
 }
-pr.textContent="النتيجة: "+((a/b)*100).toFixed(2)+"%";
+
+pr.textContent=
+"النتيجة: "+((a/b)*100).toFixed(2)+"%";
+
 }
+
 
 function age(){
+
 if(!birth.value){
+
 ar.textContent="اختر تاريخ ميلادك";
+
 return;
+
 }
+
 let b=new Date(birth.value);
+
 let t=new Date();
-let years=t.getFullYear()-b.getFullYear();
-let months=t.getMonth()-b.getMonth();
-if(months<0||(months===0&&t.getDate()<b.getDate()))years--;
-ar.textContent="عمرك: "+years+" سنة 🎉";
+
+let years=
+t.getFullYear()-b.getFullYear();
+
+let months=
+t.getMonth()-b.getMonth();
+
+if(
+months<0 ||
+(months===0 && t.getDate()<b.getDate())
+){
+
+years--;
+
 }
+
+ar.textContent=
+"عمرك: "+years+" سنة 🎉";
+
+}
+
 
 function password(){
-let chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-let n=Math.max(6,Math.min(64,Number(length.value)||16));
+
+let chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+
+let n=
+Math.max(
+6,
+Math.min(
+64,
+Number(length.value)||16
+)
+);
+
 let out="";
+
 for(let i=0;i<n;i++){
-out+=chars[Math.floor(Math.random()*chars.length)];
+
+out+=
+chars[
+Math.floor(
+Math.random()*chars.length
+)
+];
+
 }
+
 pass.textContent=out;
+
 }
+
 
 function count(){
+
 let t=text.value;
-let words=t.trim()?t.trim().split(/\s+/).length:0;
-let lines=t?t.split("\n").length:0;
-wr.textContent="الكلمات: "+words+" | الحروف: "+t.length+" | الأسطر: "+lines;
+
+let words=
+t.trim()
+?
+t.trim().split(/\s+/).length
+:
+0;
+
+let lines=
+t
+?
+t.split("\n").length
+:
+0;
+
+wr.textContent=
+"الكلمات: "+words+
+" | الحروف: "+t.length+
+" | الأسطر: "+lines;
+
 }
+
 
 function qr(){
-let value=qrtext.value.trim();
+
+let value=
+qrtext.value.trim();
+
 if(!value){
-qrresult.textContent="أدخل نصًا أو رابطًا أولاً";
+
+qrresult.textContent=
+"أدخل نصًا أو رابطًا أولاً";
+
 return;
+
 }
-let src="https://api.qrserver.com/v1/create-qr-code/?size=230x230&data="+encodeURIComponent(value);
-qrresult.innerHTML='<img src="'+src+'" alt="QR Code"><button onclick="window.open(\''+src+'\',\'_blank\')">فتح QR</button>';
+
+let src=
+"https://api.qrserver.com/v1/create-qr-code/?size=230x230&data="+
+encodeURIComponent(value);
+
+qrresult.innerHTML=
+'<img src="'+src+'" alt="QR Code">';
+
 }
+
 
 function encode(){
-devresult.textContent=encodeURIComponent(devtext.value);
+
+devresult.textContent=
+encodeURIComponent(
+devtext.value
+);
+
 }
+
 
 function decode(){
+
 try{
-devresult.textContent=decodeURIComponent(devtext.value);
-}catch{
-devresult.textContent="النص غير صالح لفك الترميز";
+
+devresult.textContent=
+decodeURIComponent(
+devtext.value
+);
+
 }
+
+catch{
+
+devresult.textContent=
+"النص غير صالح لفك الترميز";
+
 }
+
+}
+
 
 function copyText(id){
-let value=document.getElementById(id).textContent;
-if(value)navigator.clipboard.writeText(value);
+
+let value=
+document.getElementById(id)
+.textContent;
+
+if(value){
+
+navigator.clipboard
+.writeText(value);
+
 }
+
+}
+
+
+function discount(){
+
+let p=
+Number(price.value);
+
+let d=
+Number(discountValue.value);
+
+if(!p || d<0){
+
+discountResult.textContent=
+"أدخل السعر ونسبة الخصم";
+
+return;
+
+}
+
+let saved=
+p*d/100;
+
+let finalPrice=
+p-saved;
+
+discountResult.innerHTML=
+"قيمة الخصم: "+saved.toFixed(2)+
+"<br>السعر بعد الخصم: "+
+finalPrice.toFixed(2);
+
+}
+
+
+function vat(){
+
+let p=
+Number(vatPrice.value);
+
+let r=
+Number(vatRate.value);
+
+if(!p || r<0){
+
+vatResult.textContent=
+"أدخل السعر ونسبة الضريبة";
+
+return;
+
+}
+
+let tax=
+p*r/100;
+
+let total=
+p+tax;
+
+vatResult.innerHTML=
+"الضريبة: "+tax.toFixed(2)+
+"<br>السعر شامل الضريبة: "+
+total.toFixed(2);
+
+}
+
+
+function convertUnit(){
+
+let v=
+Number(unitValue.value);
+
+let type=
+unitType.value;
+
+let result;
+
+if(type==="km-m")
+result=v*1000;
+
+if(type==="m-km")
+result=v/1000;
+
+if(type==="kg-g")
+result=v*1000;
+
+if(type==="g-kg")
+result=v/1000;
+
+if(type==="m-cm")
+result=v*100;
+
+if(type==="cm-m")
+result=v/100;
+
+unitResult.textContent=
+"النتيجة: "+result;
+
+}
+
+
+let timerInterval;
+
+function startTimer(){
+
+clearInterval(timerInterval);
+
+let remaining=
+Number(seconds.value)||60;
+
+timerResult.textContent=
+remaining+" ثانية";
+
+timerInterval=
+setInterval(()=>{
+
+remaining--;
+
+timerResult.textContent=
+remaining+" ثانية";
+
+if(remaining<=0){
+
+clearInterval(timerInterval);
+
+timerResult.textContent=
+"انتهى الوقت 🎉";
+
+}
+
+},1000);
+
+}
+
+
+function stopTimer(){
+
+clearInterval(timerInterval);
+
+}
+
+
+function randomNumber(){
+
+let minValue=
+Number(min.value);
+
+let maxValue=
+Number(max.value);
+
+if(maxValue<minValue){
+
+randomResult.textContent=
+"القيمة القصوى يجب أن تكون أكبر";
+
+return;
+
+}
+
+let result=
+Math.floor(
+Math.random()*
+(maxValue-minValue+1)
+)+minValue;
+
+randomResult.textContent=
+"الرقم: "+result;
+
+}
+
+
+function upper(){
+
+textToolResult.textContent=
+textToolInput.value.toUpperCase();
+
+}
+
+
+function lower(){
+
+textToolResult.textContent=
+textToolInput.value.toLowerCase();
+
+}
+
+
+function cleanSpaces(){
+
+textToolResult.textContent=
+textToolInput.value
+.replace(/\s+/g," ")
+.trim();
+
+}
+
+
+function average(){
+
+let values=
+averageInput.value
+.split(",")
+.map(Number)
+.filter(x=>!isNaN(x));
+
+if(!values.length){
+
+averageResult.textContent=
+"أدخل أرقامًا مفصولة بفواصل";
+
+return;
+
+}
+
+let total=
+values.reduce(
+(a,b)=>a+b,
+0
+);
+
+let result=
+total/values.length;
+
+averageResult.textContent=
+"المتوسط: "+result.toFixed(2);
+
+}
+
 
 function toggleTheme(){
+
 document.body.classList.toggle("dark");
-localStorage.setItem("dark",document.body.classList.contains("dark"));
+
+localStorage.setItem(
+"dark",
+document.body.classList.contains("dark")
+);
+
 }
 
-if(localStorage.getItem("dark")==="true"){
+
+if(
+localStorage.getItem("dark")==="true"
+){
+
 document.body.classList.add("dark");
+
 }
+
 
 function searchTools(){
-let q=search.value.trim().toLowerCase();
-let cards=document.querySelectorAll(".card");
+
+let q=
+search.value
+.trim()
+.toLowerCase();
+
+let cards=
+document.querySelectorAll(".card");
+
 let found=0;
 
 cards.forEach(card=>{
-let name=card.dataset.name.toLowerCase();
-let show=name.includes(q);
-card.style.display=show?"block":"none";
+
+let name=
+card.dataset.name
+.toLowerCase();
+
+let show=
+name.includes(q);
+
+card.style.display=
+show
+?
+"block"
+:
+"none";
+
 if(show)found++;
+
 });
 
-empty.classList.toggle("hidden",found!==0);
+empty.classList.toggle(
+"hidden",
+found!==0
+);
+
 }
 
-function filterTools(category,button){
-document.querySelectorAll(".categories button").forEach(x=>x.classList.remove("active"));
+
+function filterTools(
+category,
+button
+){
+
+document
+.querySelectorAll(".categories button")
+.forEach(
+x=>x.classList.remove("active")
+);
+
 button.classList.add("active");
 
-document.querySelectorAll(".card").forEach(card=>{
+document
+.querySelectorAll(".card")
+.forEach(card=>{
+
 card.style.display=
-category==="all"||card.dataset.category===category
-?"block":"none";
+category==="all" ||
+card.dataset.category===category
+?
+"block"
+:
+"none";
+
 });
 
 empty.classList.add("hidden");
+
 search.value="";
+
 }
 
 </script>

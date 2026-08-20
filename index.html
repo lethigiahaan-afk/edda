@@ -2,663 +2,381 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>عدة — أدواتك الرقمية في مكان واحد</title>
-<meta name="description" content="عدة — مجموعة أدوات عربية مجانية وسريعة للاستخدام اليومي والبرمجة والكتابة.">
+<title>عدة | أدواتك في مكان واحد</title>
 
 <style>
+*{box-sizing:border-box}
+
 :root{
---bg:#080b14;
---card:#101522;
---card2:#0d121f;
---text:#f7f8fc;
---muted:#8d96aa;
---line:#20283a;
---primary:#7c5cff;
---primary2:#5b7cff;
---glow:rgba(124,92,255,.25);
+--bg:#071014;
+--card:#101d22;
+--card2:#0b171b;
+--text:#f4ffff;
+--muted:#91a5aa;
+--main:#19d3ae;
+--main2:#21a9ff;
+--line:#203238
 }
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
+margin:0;
 font-family:Arial,Tahoma,sans-serif;
-background:
-radial-gradient(circle at 80% 0%,rgba(124,92,255,.14),transparent 28%),
-radial-gradient(circle at 10% 20%,rgba(91,124,255,.08),transparent 25%),
-var(--bg);
 color:var(--text);
-min-height:100vh;
-overflow-x:hidden;
+background:
+linear-gradient(rgba(3,12,16,.78),rgba(3,12,16,.92)),
+url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85")
+center/cover fixed;
+min-height:100vh
 }
-
-button,input,textarea,select{
-font-family:inherit;
-}
-
-button{
-cursor:pointer;
-border:0;
-}
-
-a{
-color:inherit;
-text-decoration:none;
-}
-
-/* HEADER */
 
 header{
+height:70px;
 position:sticky;
 top:0;
-z-index:100;
-height:72px;
+z-index:10;
 display:flex;
 align-items:center;
 justify-content:space-between;
 padding:0 6%;
-background:rgba(8,11,20,.78);
-backdrop-filter:blur(18px);
-border-bottom:1px solid rgba(255,255,255,.06);
+background:rgba(5,14,18,.82);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--line)
 }
 
 .logo{
-font-size:28px;
-font-weight:900;
-letter-spacing:-1px;
+font-size:29px;
+font-weight:900
 }
 
-.logo span{
-color:var(--primary);
-}
+.logo span{color:var(--main)}
 
-.header-right{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.theme-btn{
-width:42px;
-height:42px;
-border-radius:12px;
-background:#151b2a;
+.theme{
+background:#12252a;
 color:white;
-font-size:18px;
+border:1px solid var(--line);
+border-radius:12px;
+padding:10px 14px;
+font-size:17px
 }
-
-/* HERO */
 
 .hero{
-position:relative;
-max-width:1050px;
-margin:auto;
-padding:90px 20px 55px;
 text-align:center;
+padding:75px 20px 50px
 }
 
 .badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:8px 14px;
-border:1px solid rgba(124,92,255,.3);
-background:rgba(124,92,255,.08);
-color:#b8abff;
-border-radius:100px;
+display:inline-block;
+padding:9px 15px;
+border-radius:30px;
+background:rgba(25,211,174,.1);
+border:1px solid rgba(25,211,174,.25);
+color:#6ff0d3;
 font-size:13px;
-margin-bottom:22px;
-}
-
-.badge-dot{
-width:7px;
-height:7px;
-background:#7cdb9c;
-border-radius:50%;
-box-shadow:0 0 12px #7cdb9c;
+margin-bottom:20px
 }
 
 .hero h1{
-font-size:clamp(40px,7vw,76px);
-line-height:1.05;
-letter-spacing:-3px;
-margin-bottom:22px;
+font-size:clamp(40px,8vw,72px);
+margin:0 0 18px;
+line-height:1.05
 }
 
-.gradient{
-background:linear-gradient(90deg,#fff,#9c8cff,#6e9cff);
+.hero h1 span{
+background:linear-gradient(90deg,var(--main),var(--main2));
 -webkit-background-clip:text;
-background-clip:text;
-color:transparent;
+color:transparent
 }
 
 .hero p{
 max-width:650px;
 margin:auto;
-font-size:18px;
-line-height:1.8;
 color:var(--muted);
+font-size:17px;
+line-height:1.8
 }
-
-.hero-actions{
-display:flex;
-justify-content:center;
-gap:12px;
-margin-top:30px;
-}
-
-.primary-btn,
-.secondary-btn{
-padding:14px 22px;
-border-radius:13px;
-font-size:15px;
-font-weight:bold;
-}
-
-.primary-btn{
-background:linear-gradient(135deg,var(--primary),var(--primary2));
-color:white;
-box-shadow:0 12px 35px var(--glow);
-}
-
-.secondary-btn{
-background:#151b2a;
-color:#dce1ed;
-border:1px solid var(--line);
-}
-
-/* STATS */
-
-.stats{
-max-width:900px;
-margin:10px auto 60px;
-padding:0 20px;
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-}
-
-.stat{
-background:rgba(16,21,34,.7);
-border:1px solid var(--line);
-border-radius:18px;
-padding:20px;
-text-align:center;
-}
-
-.stat strong{
-display:block;
-font-size:25px;
-margin-bottom:5px;
-}
-
-.stat span{
-font-size:13px;
-color:var(--muted);
-}
-
-/* MAIN */
 
 .container{
-width:min(1100px,92%);
-margin:auto;
-}
-
-.section-title{
-display:flex;
-align-items:end;
-justify-content:space-between;
-gap:20px;
-margin-bottom:20px;
-}
-
-.section-title h2{
-font-size:28px;
-}
-
-.section-title p{
-color:var(--muted);
-font-size:14px;
-margin-top:7px;
-}
-
-/* SEARCH */
-
-.search-box{
-position:relative;
-margin-bottom:15px;
-}
-
-.search-icon{
-position:absolute;
-right:17px;
-top:50%;
-transform:translateY(-50%);
-font-size:18px;
+width:min(1050px,92%);
+margin:auto
 }
 
 .search{
 width:100%;
 height:56px;
-padding:0 50px 0 18px;
+padding:0 20px;
 border-radius:16px;
 border:1px solid var(--line);
-background:#0e1421;
+background:rgba(10,24,29,.9);
 color:white;
-outline:none;
 font-size:15px;
-transition:.2s;
+outline:none
 }
 
 .search:focus{
-border-color:var(--primary);
-box-shadow:0 0 0 4px rgba(124,92,255,.1);
+border-color:var(--main);
+box-shadow:0 0 0 3px rgba(25,211,174,.1)
 }
-
-/* CATEGORIES */
 
 .categories{
 display:flex;
 gap:8px;
 overflow:auto;
-padding:4px 0 22px;
-scrollbar-width:none;
+padding:15px 0 25px;
+scrollbar-width:none
 }
 
-.categories::-webkit-scrollbar{
-display:none;
-}
+.categories::-webkit-scrollbar{display:none}
 
 .cat{
 white-space:nowrap;
-padding:10px 16px;
-border-radius:100px;
-background:#111827;
+padding:10px 17px;
+border-radius:30px;
+background:#102126;
 border:1px solid var(--line);
-color:#aeb6c8;
+color:#9eb0b5
 }
 
-.cat:hover,
 .cat.active{
-background:rgba(124,92,255,.15);
-border-color:rgba(124,92,255,.4);
-color:#c9c0ff;
+background:linear-gradient(135deg,var(--main),var(--main2));
+color:#001014;
+border:0;
+font-weight:bold
 }
-
-/* TOOLS */
 
 .tools{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:15px;
+gap:15px
 }
 
 .card{
-position:relative;
-background:linear-gradient(145deg,#111725,#0d121e);
-border:1px solid var(--line);
+min-height:190px;
+padding:20px;
 border-radius:20px;
-padding:22px;
-min-height:185px;
+background:linear-gradient(145deg,var(--card),var(--card2));
+border:1px solid var(--line);
 cursor:pointer;
-overflow:hidden;
 transition:.25s;
-}
-
-.card:before{
-content:"";
-position:absolute;
-width:120px;
-height:120px;
-top:-55px;
-left:-40px;
-background:var(--glow);
-filter:blur(35px);
-opacity:0;
-transition:.25s;
+display:flex;
+flex-direction:column;
+justify-content:space-between
 }
 
 .card:hover{
 transform:translateY(-5px);
-border-color:rgba(124,92,255,.45);
-box-shadow:0 18px 50px rgba(0,0,0,.22);
-}
-
-.card:hover:before{
-opacity:1;
-}
-
-.card-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
+border-color:rgba(25,211,174,.55);
+box-shadow:0 15px 40px rgba(0,0,0,.25)
 }
 
 .icon{
-width:50px;
-height:50px;
+width:52px;
+height:52px;
+border-radius:15px;
 display:grid;
 place-items:center;
-border-radius:15px;
-background:rgba(124,92,255,.1);
-border:1px solid rgba(124,92,255,.15);
 font-size:25px;
-}
-
-.arrow{
-color:#596277;
-font-size:20px;
-transition:.2s;
-}
-
-.card:hover .arrow{
-color:#a998ff;
-transform:translateX(-4px);
+background:rgba(25,211,174,.09);
+border:1px solid rgba(25,211,174,.15)
 }
 
 .card h3{
-font-size:17px;
-margin:20px 0 8px;
+margin:18px 0 7px;
+font-size:17px
 }
 
 .card p{
+margin:0;
+color:var(--muted);
 font-size:13px;
-line-height:1.7;
-color:var(--muted);
+line-height:1.6
 }
-
-.empty{
-text-align:center;
-padding:50px;
-color:var(--muted);
-}
-
-/* TOOLS VIEW */
 
 .tool{
 display:none;
-margin:25px 0;
-padding:28px;
-background:linear-gradient(145deg,#111725,#0d121e);
+margin-top:20px;
+padding:25px;
+border-radius:20px;
+background:rgba(10,24,29,.96);
 border:1px solid var(--line);
-border-radius:22px;
+box-shadow:0 20px 60px rgba(0,0,0,.25)
 }
 
-.tool.active{
-display:block;
-}
+.tool.active{display:block}
 
 .tool-head{
 display:flex;
-align-items:center;
 justify-content:space-between;
-gap:15px;
-margin-bottom:25px;
-}
-
-.tool-title{
-display:flex;
 align-items:center;
-gap:13px;
+gap:10px;
+margin-bottom:20px
 }
 
-.tool-title .icon{
-width:45px;
-height:45px;
-}
-
-.tool h2{
-font-size:23px;
+.tool-head h2{
+margin:0;
+font-size:22px
 }
 
 .back{
-background:#171e2d;
-color:#cbd2e2;
 padding:10px 15px;
-border-radius:11px;
+border-radius:10px;
+background:#14282e;
+color:#c8d7da;
+border:1px solid var(--line)
 }
 
-input,
-textarea,
-select{
+input,textarea,select{
 width:100%;
 padding:14px;
 margin:7px 0;
-border-radius:12px;
+border-radius:11px;
 border:1px solid var(--line);
-background:#090e18;
+background:#071216;
 color:white;
-outline:none;
 font-size:15px;
+outline:none;
+font-family:inherit
 }
 
-input:focus,
-textarea:focus,
-select:focus{
-border-color:var(--primary);
-}
+textarea{resize:vertical}
 
 .action{
 padding:13px 20px;
-border-radius:11px;
-background:linear-gradient(135deg,var(--primary),var(--primary2));
-color:white;
 margin-top:8px;
+border-radius:11px;
+border:0;
+background:linear-gradient(135deg,var(--main),var(--main2));
+color:#001014;
 font-weight:bold;
+cursor:pointer
+}
+
+.copy{
+padding:10px 15px;
+margin-top:10px;
+border-radius:10px;
+background:#172b31;
+color:white;
+border:1px solid var(--line)
 }
 
 .result{
 margin-top:15px;
-padding:17px;
+padding:16px;
 min-height:50px;
-border-radius:13px;
-background:#090e18;
+border-radius:12px;
+background:#071216;
 border:1px solid var(--line);
 line-height:1.8;
-word-break:break-word;
-}
-
-.copy{
-margin-top:10px;
-padding:10px 15px;
-background:#1a2233;
-color:#d9deeb;
-border-radius:10px;
+word-break:break-word
 }
 
 .qr img{
 display:block;
 max-width:230px;
-background:white;
-padding:10px;
-border-radius:14px;
 margin:15px auto;
+padding:10px;
+background:white;
+border-radius:15px
 }
-
-/* ABOUT */
 
 .about{
-margin:90px 0 40px;
-padding:40px;
-border-radius:25px;
-background:
-linear-gradient(135deg,rgba(124,92,255,.12),rgba(91,124,255,.04)),
-#0e1421;
-border:1px solid var(--line);
+margin:70px 0 30px;
+padding:35px 25px;
 text-align:center;
+border-radius:22px;
+background:rgba(10,24,29,.9);
+border:1px solid var(--line)
 }
 
-.about h2{
-font-size:28px;
-margin-bottom:12px;
-}
+.about h2{margin-top:0}
 
 .about p{
 max-width:650px;
 margin:auto;
 color:var(--muted);
-line-height:1.9;
+line-height:1.9
 }
-
-/* FOOTER */
 
 footer{
-margin-top:70px;
 padding:35px 20px;
-border-top:1px solid var(--line);
 text-align:center;
-color:#687287;
-font-size:13px;
+color:#65787d;
+border-top:1px solid var(--line)
 }
 
-.footer-logo{
-font-size:21px;
-font-weight:bold;
-color:#fff;
-margin-bottom:8px;
+.hidden{display:none!important}
+
+.empty{
+text-align:center;
+padding:40px;
+color:var(--muted)
 }
 
-.footer-logo span{
-color:var(--primary);
-}
+/* جوال: مربعين جنب بعض */
 
-/* LIGHT MODE */
+@media(max-width:600px){
 
-body.light{
---bg:#f6f7fb;
---card:#fff;
---card2:#fff;
---text:#151827;
---muted:#687187;
---line:#e3e6ee;
-}
-
-body.light{
-background:
-radial-gradient(circle at 80% 0%,rgba(124,92,255,.10),transparent 28%),
-#f6f7fb;
-}
-
-body.light header{
-background:rgba(246,247,251,.82);
-border-color:#e3e6ee;
-}
-
-body.light .theme-btn{
-background:#e9ebf3;
-color:#222;
-}
-
-body.light .search,
-body.light .card,
-body.light .tool,
-body.light .stat,
-body.light .about{
-background:#fff;
-}
-
-body.light .search,
-body.light input,
-body.light textarea,
-body.light select{
-color:#151827;
-background:#fff;
-}
-
-body.light .result{
-background:#f5f6fa;
-}
-
-body.light .categories .cat{
-background:#fff;
-}
-
-body.light .card p{
-color:#737b8e;
-}
-
-body.light .back{
-background:#edf0f6;
-color:#222;
-}
-
-body.light .footer-logo{
-color:#151827;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-.tools{
-grid-template-columns:repeat(2,1fr);
-}
+header{padding:0 5%}
 
 .hero{
-padding-top:65px;
-}
-
-}
-
-@media(max-width:560px){
-
-header{
-height:64px;
-padding:0 5%;
-}
-
-.logo{
-font-size:24px;
-}
-
-.hero{
-padding:60px 15px 40px;
+padding:60px 15px 40px
 }
 
 .hero h1{
-letter-spacing:-2px;
+font-size:42px
 }
 
 .hero p{
-font-size:15px;
-}
-
-.hero-actions{
-flex-direction:column;
-}
-
-.stats{
-grid-template-columns:1fr;
-margin-bottom:45px;
+font-size:15px
 }
 
 .tools{
-grid-template-columns:1fr;
+grid-template-columns:repeat(2,1fr);
+gap:10px
 }
 
 .card{
-min-height:155px;
+min-height:175px;
+padding:15px;
+border-radius:17px
 }
 
-.section-title h2{
-font-size:23px;
+.card h3{
+font-size:15px;
+margin-top:13px
+}
+
+.card p{
+font-size:12px
+}
+
+.icon{
+width:44px;
+height:44px;
+font-size:21px
 }
 
 .tool{
-padding:20px;
+padding:18px;
+border-radius:17px
 }
 
-.about{
-padding:28px 20px;
+.tool-head h2{
+font-size:18px
+}
+
+}
+
+/* كمبيوتر */
+
+@media(min-width:601px){
+
+.tools{
+grid-template-columns:repeat(3,1fr)
 }
 
 }
@@ -668,281 +386,128 @@ padding:28px 20px;
 <body>
 
 <header>
-
-<div class="logo">
-عدة<span>.</span>
-</div>
-
-<div class="header-right">
-<button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀️</button>
-</div>
-
+<div class="logo">عدة<span>.</span></div>
+<button class="theme" onclick="theme()">☀️</button>
 </header>
-
 
 <section class="hero">
 
-<div class="badge">
-<span class="badge-dot"></span>
-مجموعة أدوات عربية مجانية
-</div>
+<div class="badge">✦ أدوات عربية مجانية</div>
 
 <h1>
-كل أدواتك في
-<span class="gradient">مكان واحد.</span>
+كل أدواتك
+<span>في مكان واحد.</span>
 </h1>
 
 <p>
-عدة تجمع لك الأدوات التي تحتاجها يوميًا في تجربة بسيطة،
-سريعة ومرتبة — بدون تسجيل وبدون تعقيد.
+مجموعة أدوات بسيطة وسريعة تساعدك في حياتك اليومية،
+الكتابة والبرمجة — بدون تسجيل وبدون تعقيد.
 </p>
-
-<div class="hero-actions">
-<button class="primary-btn" onclick="document.getElementById('toolsSection').scrollIntoView()">
-اكتشف الأدوات ↓
-</button>
-
-<button class="secondary-btn" onclick="document.getElementById('about').scrollIntoView()">
-عن عدة
-</button>
-</div>
 
 </section>
 
-
-<div class="stats">
-
-<div class="stat">
-<strong>13+</strong>
-<span>أداة مجانية</span>
-</div>
-
-<div class="stat">
-<strong>100%</strong>
-<span>مجاني</span>
-</div>
-
-<div class="stat">
-<strong>24/7</strong>
-<span>متاح دائمًا</span>
-</div>
-
-</div>
-
-
-<main class="container" id="toolsSection">
-
-<div class="section-title">
-
-<div>
-<h2>الأدوات</h2>
-<p>اختر الأداة التي تحتاجها وابدأ مباشرة.</p>
-</div>
-
-</div>
-
-
-<div class="search-box">
-
-<span class="search-icon">⌕</span>
+<main class="container">
 
 <input
 class="search"
 id="search"
-placeholder="ابحث عن أداة..."
+placeholder="🔎 ابحث عن أداة..."
 oninput="searchTools()">
-
-</div>
-
 
 <div class="categories">
 
-<button class="cat active" onclick="filterTools('all',this)">
-الكل
-</button>
-
-<button class="cat" onclick="filterTools('daily',this)">
-يومية
-</button>
-
-<button class="cat" onclick="filterTools('writing',this)">
-كتابة
-</button>
-
-<button class="cat" onclick="filterTools('dev',this)">
-برمجة
-</button>
+<button class="cat active" onclick="filter('all',this)">الكل</button>
+<button class="cat" onclick="filter('daily',this)">يومية</button>
+<button class="cat" onclick="filter('writing',this)">كتابة</button>
+<button class="cat" onclick="filter('dev',this)">برمجة</button>
 
 </div>
-
 
 <div id="tools" class="tools">
 
-
-<div class="card" data-category="daily" data-name="حاسبة النسبة" onclick="openTool('percent')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="حاسبة النسبة" onclick="openTool('percent')">
 <div class="icon">🔢</div>
-<div class="arrow">←</div>
-</div>
-<h3>حاسبة النسبة</h3>
-<p>احسب النسبة المئوية بسرعة وسهولة.</p>
+<div><h3>حاسبة النسبة</h3><p>احسب النسبة المئوية بسرعة.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="حاسبة العمر" onclick="openTool('age')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="حاسبة العمر" onclick="openTool('age')">
 <div class="icon">🎂</div>
-<div class="arrow">←</div>
-</div>
-<h3>حاسبة العمر</h3>
-<p>احسب عمرك بالسنوات بشكل سريع.</p>
+<div><h3>حاسبة العمر</h3><p>اعرف عمرك بسهولة.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="مولد كلمات المرور" onclick="openTool('password')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="مولد كلمات المرور" onclick="openTool('password')">
 <div class="icon">🔐</div>
-<div class="arrow">←</div>
-</div>
-<h3>مولد كلمات المرور</h3>
-<p>أنشئ كلمات مرور عشوائية وقوية.</p>
+<div><h3>مولد كلمات المرور</h3><p>أنشئ كلمة مرور قوية.</p></div>
 </div>
 
-
-<div class="card" data-category="writing" data-name="عداد الكلمات" onclick="openTool('words')">
-<div class="card-top">
+<div class="card" data-cat="writing" data-name="عداد الكلمات" onclick="openTool('words')">
 <div class="icon">📝</div>
-<div class="arrow">←</div>
-</div>
-<h3>عداد الكلمات</h3>
-<p>احسب الكلمات والحروف والأسطر.</p>
+<div><h3>عداد الكلمات</h3><p>احسب الكلمات والحروف.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="مولد qr" onclick="openTool('qr')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="qr" onclick="openTool('qr')">
 <div class="icon">📱</div>
-<div class="arrow">←</div>
-</div>
-<h3>مولد QR</h3>
-<p>حوّل أي رابط أو نص إلى QR.</p>
+<div><h3>مولد QR</h3><p>حوّل الرابط إلى QR.</p></div>
 </div>
 
-
-<div class="card" data-category="dev" data-name="أدوات المبرمجين" onclick="openTool('dev')">
-<div class="card-top">
+<div class="card" data-cat="dev" data-name="أدوات المبرمجين" onclick="openTool('dev')">
 <div class="icon">💻</div>
-<div class="arrow">←</div>
-</div>
-<h3>أدوات المبرمجين</h3>
-<p>URL Encode و Decode بسرعة.</p>
+<div><h3>أدوات المبرمجين</h3><p>Encode و Decode.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="حاسبة الخصم" onclick="openTool('discount')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="حاسبة الخصم" onclick="openTool('discount')">
 <div class="icon">🏷️</div>
-<div class="arrow">←</div>
-</div>
-<h3>حاسبة الخصم</h3>
-<p>اعرف السعر النهائي بعد الخصم.</p>
+<div><h3>حاسبة الخصم</h3><p>اعرف السعر بعد الخصم.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="حاسبة الضريبة" onclick="openTool('vat')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="الضريبة" onclick="openTool('vat')">
 <div class="icon">💰</div>
-<div class="arrow">←</div>
-</div>
-<h3>حاسبة الضريبة</h3>
-<p>احسب قيمة الضريبة والسعر النهائي.</p>
+<div><h3>حاسبة الضريبة</h3><p>احسب الضريبة والسعر النهائي.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="محول الوحدات" onclick="openTool('units')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="محول الوحدات" onclick="openTool('units')">
 <div class="icon">📏</div>
-<div class="arrow">←</div>
-</div>
-<h3>محول الوحدات</h3>
-<p>حوّل بين الأطوال والأوزان.</p>
+<div><h3>محول الوحدات</h3><p>حوّل بين الوحدات.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="مؤقت" onclick="openTool('timer')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="المؤقت" onclick="openTool('timer')">
 <div class="icon">⏱️</div>
-<div class="arrow">←</div>
-</div>
-<h3>مؤقت</h3>
-<p>شغّل مؤقتًا بسيطًا لأي مهمة.</p>
+<div><h3>المؤقت</h3><p>مؤقت سريع وبسيط.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="رقم عشوائي" onclick="openTool('random')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="رقم عشوائي" onclick="openTool('random')">
 <div class="icon">🎲</div>
-<div class="arrow">←</div>
-</div>
-<h3>رقم عشوائي</h3>
-<p>ولّد رقمًا عشوائيًا بين قيمتين.</p>
+<div><h3>رقم عشوائي</h3><p>ولّد رقمًا عشوائيًا.</p></div>
 </div>
 
-
-<div class="card" data-category="writing" data-name="أدوات النص" onclick="openTool('texttools')">
-<div class="card-top">
+<div class="card" data-cat="writing" data-name="أدوات النص" onclick="openTool('texttools')">
 <div class="icon">🔤</div>
-<div class="arrow">←</div>
-</div>
-<h3>أدوات النص</h3>
-<p>غيّر النص ونظفه بسرعة.</p>
+<div><h3>أدوات النص</h3><p>تعديل وتنظيف النص.</p></div>
 </div>
 
-
-<div class="card" data-category="daily" data-name="حاسبة المتوسط" onclick="openTool('average')">
-<div class="card-top">
+<div class="card" data-cat="daily" data-name="المتوسط" onclick="openTool('average')">
 <div class="icon">📊</div>
-<div class="arrow">←</div>
-</div>
-<h3>حاسبة المتوسط</h3>
-<p>احسب متوسط مجموعة من الأرقام.</p>
+<div><h3>حاسبة المتوسط</h3><p>احسب متوسط الأرقام.</p></div>
 </div>
 
 </div>
 
-
-<div id="empty" class="empty hidden">
-لا توجد نتائج مطابقة 🔎
-</div>
+<div id="empty" class="empty hidden">ما لقينا أداة بهذا الاسم 🔎</div>
 
 
-<!-- TOOLS -->
+<!-- الأدوات -->
 
 <div id="percent" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🔢</div>
-<h2>حاسبة النسبة</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>🔢 حاسبة النسبة</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="p1" type="number" placeholder="القيمة">
 <input id="p2" type="number" placeholder="من">
-<button class="action" onclick="percent()">احسب النسبة</button>
+<button class="action" onclick="percent()">احسب</button>
 <div id="pr" class="result"></div>
 </div>
 
 
 <div id="age" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🎂</div>
-<h2>حاسبة العمر</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>🎂 حاسبة العمر</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="birth" type="date">
 <button class="action" onclick="age()">احسب عمري</button>
 <div id="ar" class="result"></div>
@@ -950,110 +515,60 @@ oninput="searchTools()">
 
 
 <div id="password" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🔐</div>
-<h2>مولد كلمات المرور</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>🔐 مولد كلمة المرور</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="length" type="number" value="16" min="6" max="64">
-<button class="action" onclick="password()">توليد كلمة مرور</button>
+<button class="action" onclick="password()">توليد</button>
 <div id="pass" class="result"></div>
-<button class="copy" onclick="copyText('pass')">📋 نسخ</button>
+<button class="copy" onclick="copy('pass')">📋 نسخ</button>
 </div>
 
 
 <div id="words" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">📝</div>
-<h2>عداد الكلمات</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<textarea id="text" rows="9" placeholder="اكتب النص هنا..." oninput="count()"></textarea>
+<div class="tool-head"><h2>📝 عداد الكلمات</h2><button class="back" onclick="home()">رجوع</button></div>
+<textarea id="text" rows="8" placeholder="اكتب النص..." oninput="count()"></textarea>
 <div id="wr" class="result">الكلمات: 0 | الحروف: 0 | الأسطر: 0</div>
 </div>
 
 
 <div id="qr" class="tool qr">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">📱</div>
-<h2>مولد QR</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<input id="qrtext" placeholder="ضع الرابط أو النص هنا">
+<div class="tool-head"><h2>📱 مولد QR</h2><button class="back" onclick="home()">رجوع</button></div>
+<input id="qrtext" placeholder="الرابط أو النص">
 <button class="action" onclick="qr()">إنشاء QR</button>
 <div id="qrresult" class="result"></div>
 </div>
 
 
 <div id="dev" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">💻</div>
-<h2>أدوات المبرمجين</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<textarea id="devtext" rows="9" placeholder="اكتب النص هنا"></textarea>
+<div class="tool-head"><h2>💻 أدوات المبرمجين</h2><button class="back" onclick="home()">رجوع</button></div>
+<textarea id="devtext" rows="7" placeholder="النص"></textarea>
 <button class="action" onclick="encode()">URL Encode</button>
 <button class="action" onclick="decode()">URL Decode</button>
 <div id="devresult" class="result"></div>
-<button class="copy" onclick="copyText('devresult')">📋 نسخ</button>
+<button class="copy" onclick="copy('devresult')">📋 نسخ</button>
 </div>
 
 
 <div id="discount" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🏷️</div>
-<h2>حاسبة الخصم</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>🏷️ حاسبة الخصم</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="price" type="number" placeholder="السعر">
-<input id="discountValue" type="number" placeholder="نسبة الخصم %">
+<input id="discountValue" type="number" placeholder="الخصم %">
 <button class="action" onclick="discount()">احسب</button>
 <div id="discountResult" class="result"></div>
 </div>
 
 
 <div id="vat" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">💰</div>
-<h2>حاسبة الضريبة</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<input id="vatPrice" type="number" placeholder="السعر قبل الضريبة">
-<input id="vatRate" type="number" value="15">
+<div class="tool-head"><h2>💰 حاسبة الضريبة</h2><button class="back" onclick="home()">رجوع</button></div>
+<input id="vatPrice" type="number" placeholder="السعر">
+<input id="vatRate" type="number" value="15" placeholder="الضريبة %">
 <button class="action" onclick="vat()">احسب</button>
 <div id="vatResult" class="result"></div>
 </div>
 
 
 <div id="units" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">📏</div>
-<h2>محول الوحدات</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>📏 محول الوحدات</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="unitValue" type="number" placeholder="القيمة">
-
 <select id="unitType">
 <option value="km-m">كيلومتر → متر</option>
 <option value="m-km">متر → كيلومتر</option>
@@ -1062,105 +577,60 @@ oninput="searchTools()">
 <option value="m-cm">متر → سنتيمتر</option>
 <option value="cm-m">سنتيمتر → متر</option>
 </select>
-
-<button class="action" onclick="convertUnit()">تحويل</button>
+<button class="action" onclick="units()">تحويل</button>
 <div id="unitResult" class="result"></div>
 </div>
 
 
 <div id="timer" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">⏱️</div>
-<h2>المؤقت</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
+<div class="tool-head"><h2>⏱️ المؤقت</h2><button class="back" onclick="home()">رجوع</button></div>
 <input id="seconds" type="number" value="60">
-<button class="action" onclick="startTimer()">ابدأ</button>
-<button class="copy" onclick="stopTimer()">إيقاف</button>
+<button class="action" onclick="start()">ابدأ</button>
+<button class="copy" onclick="stop()">إيقاف</button>
 <div id="timerResult" class="result">60 ثانية</div>
 </div>
 
 
 <div id="random" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🎲</div>
-<h2>رقم عشوائي</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<input id="min" type="number" value="1" placeholder="من">
-<input id="max" type="number" value="100" placeholder="إلى">
-<button class="action" onclick="randomNumber()">توليد</button>
+<div class="tool-head"><h2>🎲 رقم عشوائي</h2><button class="back" onclick="home()">رجوع</button></div>
+<input id="min" type="number" value="1">
+<input id="max" type="number" value="100">
+<button class="action" onclick="randomNum()">توليد</button>
 <div id="randomResult" class="result"></div>
 </div>
 
 
 <div id="texttools" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">🔤</div>
-<h2>أدوات النص</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<textarea id="textToolInput" rows="8" placeholder="اكتب النص هنا"></textarea>
-
+<div class="tool-head"><h2>🔤 أدوات النص</h2><button class="back" onclick="home()">رجوع</button></div>
+<textarea id="textInput" rows="7" placeholder="اكتب النص"></textarea>
 <button class="action" onclick="upper()">UPPERCASE</button>
 <button class="action" onclick="lower()">lowercase</button>
-<button class="action" onclick="cleanSpaces()">تنظيف المسافات</button>
-
-<div id="textToolResult" class="result"></div>
-
-<button class="copy" onclick="copyText('textToolResult')">📋 نسخ</button>
+<button class="action" onclick="clean()">تنظيف المسافات</button>
+<div id="textResult" class="result"></div>
+<button class="copy" onclick="copy('textResult')">📋 نسخ</button>
 </div>
 
 
 <div id="average" class="tool">
-<div class="tool-head">
-<div class="tool-title">
-<div class="icon">📊</div>
-<h2>حاسبة المتوسط</h2>
-</div>
-<button class="back" onclick="goHome()">رجوع</button>
-</div>
-
-<input id="averageInput" placeholder="مثال: 10,20,30,40">
-<button class="action" onclick="average()">احسب المتوسط</button>
+<div class="tool-head"><h2>📊 حاسبة المتوسط</h2><button class="back" onclick="home()">رجوع</button></div>
+<input id="averageInput" placeholder="10,20,30,40">
+<button class="action" onclick="average()">احسب</button>
 <div id="averageResult" class="result"></div>
 </div>
 
 
-<section class="about" id="about">
-
+<section class="about">
 <h2>ليش عدة؟</h2>
-
 <p>
-بدل ما تبحث عن أداة صغيرة كل مرة في مواقع مختلفة،
-جمعنا لك مجموعة أدوات مفيدة في مكان واحد.
-عدة مشروع عربي بسيط يتطور باستمرار، والأدوات فيه مجانية وسريعة.
+عدة تجمع الأدوات التي تحتاجها يوميًا في مكان واحد،
+بواجهة عربية بسيطة وسريعة ومجانية.
 </p>
-
 </section>
 
 </main>
 
-
 <footer>
-
-<div class="footer-logo">
-عدة<span>.</span>
-</div>
-
-<div>
-أدواتك الرقمية في مكان واحد — © 2026
-</div>
-
+عدة. — أدواتك الرقمية في مكان واحد © 2026
 </footer>
 
 
@@ -1171,61 +641,44 @@ function openTool(id){
 document.querySelectorAll(".tool")
 .forEach(x=>x.classList.remove("active"));
 
-document.getElementById("tools")
-.classList.add("hidden");
+let tool=document.getElementById(id);
 
-document.getElementById("search")
-.classList.add("hidden");
+tool.classList.add("active");
 
-document.querySelector(".categories")
-.classList.add("hidden");
+/* هنا الإصلاح:
+نفتح الشرح تحت المربعات مباشرة
+بدون الرجوع لأعلى الصفحة */
 
-document.querySelector(".section-title")
-.classList.add("hidden");
-
-document.getElementById(id)
-.classList.add("active");
-
-scrollTo({top:0,behavior:"smooth"});
+setTimeout(()=>{
+tool.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+},80);
 
 }
 
-function goHome(){
+function home(){
 
 document.querySelectorAll(".tool")
 .forEach(x=>x.classList.remove("active"));
 
 document.getElementById("tools")
-.classList.remove("hidden");
-
-document.getElementById("search")
-.classList.remove("hidden");
-
-document.querySelector(".categories")
-.classList.remove("hidden");
-
-document.querySelector(".section-title")
-.classList.remove("hidden");
-
-document.getElementById("empty")
-.classList.add("hidden");
-
-scrollTo({top:document.getElementById("toolsSection").offsetTop-80,behavior:"smooth"});
+.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
 
 }
 
 function percent(){
 
-let a=Number(p1.value);
-let b=Number(p2.value);
-
-if(!a||!b){
-pr.textContent="أدخل الأرقام أولاً";
-return;
-}
+let a=+p1.value,b=+p2.value;
 
 pr.textContent=
-"النتيجة: "+((a/b)*100).toFixed(2)+"%";
+a&&b
+?"النتيجة: "+(a/b*100).toFixed(2)+"%"
+:"أدخل الأرقام أولاً";
 
 }
 
@@ -1236,68 +689,56 @@ ar.textContent="اختر تاريخ الميلاد";
 return;
 }
 
-let b=new Date(birth.value);
-let t=new Date();
+let b=new Date(birth.value),t=new Date();
+let y=t.getFullYear()-b.getFullYear();
 
-let years=t.getFullYear()-b.getFullYear();
+if(
+t.getMonth()<b.getMonth()||
+(t.getMonth()==b.getMonth()&&t.getDate()<b.getDate())
+)y--;
 
-let m=t.getMonth()-b.getMonth();
-
-if(m<0||(m===0&&t.getDate()<b.getDate())){
-years--;
-}
-
-ar.textContent="عمرك: "+years+" سنة 🎉";
+ar.textContent="عمرك: "+y+" سنة 🎉";
 
 }
 
 function password(){
 
-let chars=
-"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+let chars="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+let n=Math.max(6,Math.min(64,+length.value||16));
+let s="";
 
-let n=Math.max(6,Math.min(64,Number(length.value)||16));
+for(let i=0;i<n;i++)
+s+=chars[Math.floor(Math.random()*chars.length)];
 
-let out="";
-
-for(let i=0;i<n;i++){
-out+=chars[Math.floor(Math.random()*chars.length)];
-}
-
-pass.textContent=out;
+pass.textContent=s;
 
 }
 
 function count(){
 
 let t=text.value;
-
-let words=t.trim()?t.trim().split(/\s+/).length:0;
-
-let lines=t?t.split("\n").length:0;
+let w=t.trim()?t.trim().split(/\s+/).length:0;
+let l=t?t.split("\n").length:0;
 
 wr.textContent=
-"الكلمات: "+words+
+"الكلمات: "+w+
 " | الحروف: "+t.length+
-" | الأسطر: "+lines;
+" | الأسطر: "+l;
 
 }
 
 function qr(){
 
-let value=qrtext.value.trim();
+let v=qrtext.value.trim();
 
-if(!value){
-qrresult.textContent="أدخل نصًا أو رابطًا أولاً";
+if(!v){
+qrresult.textContent="أدخل رابطًا أو نصًا";
 return;
 }
 
-let src=
-"https://api.qrserver.com/v1/create-qr-code/?size=230x230&data="+
-encodeURIComponent(value);
-
 qrresult.innerHTML=
-'<img src="'+src+'" alt="QR Code">';
+'<img src="https://api.qrserver.com/v1/create-qr-code/?size=230x230&data='+
+encodeURIComponent(v)+'">';
 
 }
 
@@ -1310,102 +751,89 @@ function decode(){
 try{
 devresult.textContent=decodeURIComponent(devtext.value);
 }catch{
-devresult.textContent="النص غير صالح لفك الترميز";
+devresult.textContent="النص غير صالح";
 }
 
 }
 
-function copyText(id){
+function copy(id){
 
-let value=document.getElementById(id).textContent;
-
-if(value){
-navigator.clipboard.writeText(value);
-}
+navigator.clipboard.writeText(
+document.getElementById(id).textContent
+);
 
 }
 
 function discount(){
 
-let p=Number(price.value);
-let d=Number(discountValue.value);
+let p=+price.value,d=+discountValue.value;
 
-if(!p||d<0){
-discountResult.textContent="أدخل السعر ونسبة الخصم";
+if(!p){
+discountResult.textContent="أدخل السعر";
 return;
 }
 
-let saved=p*d/100;
-let finalPrice=p-saved;
+let save=p*d/100;
 
 discountResult.innerHTML=
-"قيمة الخصم: "+saved.toFixed(2)+
-"<br>السعر بعد الخصم: "+finalPrice.toFixed(2);
+"قيمة الخصم: "+save.toFixed(2)+
+"<br>السعر بعد الخصم: "+(p-save).toFixed(2);
 
 }
 
 function vat(){
 
-let p=Number(vatPrice.value);
-let r=Number(vatRate.value);
+let p=+vatPrice.value,r=+vatRate.value||15;
 
-if(!p||r<0){
-vatResult.textContent="أدخل السعر ونسبة الضريبة";
+if(!p){
+vatResult.textContent="أدخل السعر";
 return;
 }
 
 let tax=p*r/100;
-let total=p+tax;
 
 vatResult.innerHTML=
 "الضريبة: "+tax.toFixed(2)+
-"<br>السعر شامل الضريبة: "+total.toFixed(2);
+"<br>السعر شامل الضريبة: "+(p+tax).toFixed(2);
 
 }
 
-function convertUnit(){
+function units(){
 
-let v=Number(unitValue.value);
-let type=unitType.value;
+let v=+unitValue.value,t=unitType.value;
 
-if(isNaN(v)){
-unitResult.textContent="أدخل القيمة أولاً";
-return;
-}
+let m={
+"km-m":v*1000,
+"m-km":v/1000,
+"kg-g":v*1000,
+"g-kg":v/1000,
+"m-cm":v*100,
+"cm-m":v/100
+};
 
-let result;
-
-if(type==="km-m")result=v*1000;
-if(type==="m-km")result=v/1000;
-if(type==="kg-g")result=v*1000;
-if(type==="g-kg")result=v/1000;
-if(type==="m-cm")result=v*100;
-if(type==="cm-m")result=v/100;
-
-unitResult.textContent="النتيجة: "+result;
+unitResult.textContent="النتيجة: "+m[t];
 
 }
 
-let timerInterval;
+let timer;
 
-function startTimer(){
+function start(){
 
-clearInterval(timerInterval);
+clearInterval(timer);
 
-let remaining=Number(seconds.value)||60;
+let n=+seconds.value||60;
 
-timerResult.textContent=remaining+" ثانية";
+timerResult.textContent=n+" ثانية";
 
-timerInterval=setInterval(()=>{
+timer=setInterval(()=>{
 
-remaining--;
+n--;
 
-timerResult.textContent=remaining+" ثانية";
+timerResult.textContent=n+" ثانية";
 
-if(remaining<=0){
+if(n<=0){
 
-clearInterval(timerInterval);
-
+clearInterval(timer);
 timerResult.textContent="انتهى الوقت 🎉";
 
 }
@@ -1414,140 +842,98 @@ timerResult.textContent="انتهى الوقت 🎉";
 
 }
 
-function stopTimer(){
-clearInterval(timerInterval);
+function stop(){
+clearInterval(timer);
 }
 
-function randomNumber(){
+function randomNum(){
 
-let minValue=Number(min.value);
-let maxValue=Number(max.value);
+let a=+min.value,b=+max.value;
 
-if(maxValue<minValue){
+if(b<a){
+randomResult.textContent="القيمة القصوى يجب أن تكون أكبر";
+return;
+}
 
 randomResult.textContent=
-"القيمة القصوى يجب أن تكون أكبر";
-
-return;
-
-}
-
-let result=
-Math.floor(Math.random()*(maxValue-minValue+1))
-+minValue;
-
-randomResult.textContent="الرقم: "+result;
+"الرقم: "+(Math.floor(Math.random()*(b-a+1))+a);
 
 }
 
 function upper(){
-textToolResult.textContent=
-textToolInput.value.toUpperCase();
+textResult.textContent=textInput.value.toUpperCase();
 }
 
 function lower(){
-textToolResult.textContent=
-textToolInput.value.toLowerCase();
+textResult.textContent=textInput.value.toLowerCase();
 }
 
-function cleanSpaces(){
-
-textToolResult.textContent=
-textToolInput.value.replace(/\s+/g," ").trim();
-
+function clean(){
+textResult.textContent=textInput.value.replace(/\s+/g," ").trim();
 }
 
 function average(){
 
-let values=
-averageInput.value
+let a=averageInput.value
 .split(",")
 .map(Number)
 .filter(x=>!isNaN(x));
 
-if(!values.length){
-
-averageResult.textContent=
-"أدخل أرقامًا مفصولة بفواصل";
-
+if(!a.length){
+averageResult.textContent="أدخل أرقامًا مفصولة بفواصل";
 return;
-
 }
-
-let total=values.reduce((a,b)=>a+b,0);
 
 averageResult.textContent=
-"المتوسط: "+(total/values.length).toFixed(2);
-
-}
-
-function toggleTheme(){
-
-document.body.classList.toggle("light");
-
-let light=document.body.classList.contains("light");
-
-localStorage.setItem("light",light);
-
-document.getElementById("themeBtn").textContent=
-light?"🌙":"☀️";
-
-}
-
-if(localStorage.getItem("light")==="true"){
-
-document.body.classList.add("light");
-
-document.getElementById("themeBtn").textContent="🌙";
+"المتوسط: "+
+(a.reduce((x,y)=>x+y,0)/a.length).toFixed(2);
 
 }
 
 function searchTools(){
 
-let q=search.value.trim().toLowerCase();
-
-let cards=document.querySelectorAll(".card");
-
+let q=search.value.toLowerCase();
 let found=0;
 
-cards.forEach(card=>{
+document.querySelectorAll(".card")
+.forEach(c=>{
 
-let name=card.dataset.name.toLowerCase();
+let show=c.dataset.name.includes(q);
 
-let show=name.includes(q);
-
-card.style.display=show?"block":"none";
+c.style.display=show?"flex":"none";
 
 if(show)found++;
 
 });
 
-empty.classList.toggle("hidden",found!==0);
+empty.classList.toggle("hidden",found>0);
 
 }
 
-function filterTools(category,button){
+function filter(cat,btn){
 
-document
-.querySelectorAll(".cat")
+document.querySelectorAll(".cat")
 .forEach(x=>x.classList.remove("active"));
 
-button.classList.add("active");
+btn.classList.add("active");
 
-document
-.querySelectorAll(".card")
-.forEach(card=>{
+document.querySelectorAll(".card")
+.forEach(c=>{
 
-card.style.display=
-category==="all"||
-card.dataset.category===category
-?"block":"none";
+c.style.display=
+cat=="all"||c.dataset.cat==cat
+?"flex":"none";
 
 });
 
 search.value="";
-
 empty.classList.add("hidden");
+
+}
+
+function theme(){
+
+document.body.classList.toggle("light");
 
 }
 
@@ -1555,4 +941,5 @@ empty.classList.add("hidden");
 
 </body>
 </html>
+
 
